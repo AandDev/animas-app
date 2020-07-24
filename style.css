@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main: 'Lobster', cursive;
+  --secd: 'Raleway', sans-serif;
+  --alt: 'Righteous', cursive;
+}
+
+  body {
+  transition: all 1.3s;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.head {
+  transition: all 0.5s;
+  width: 90%;
+}
+
+.head h1 {
+  text-align: center;
+  margin: 1.5rem 0 1rem 0;
+  font-size: 2.5rem;
+  font-family: var(--main);
+}
+
+.head p {
+  font-size: 1.5rem;
+  font-family: var(--secd);
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+}
+
+.tabs > div {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  animation-name: float;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+
+
+.tab-1.expand::after {
+  content: "";
+  background-color: #c4fb6d;
+}
+
+.tab-2 {
+  animation-delay: 5s;
+}
+.tab-2.expand::after {
+  content: "";
+  background-color: #ffa931;
+}
+
+.tab-3 {
+  animation-delay: 1s;
+}
+.tab-3.expand::after {
+  content: "";
+  background-color: #12cad6;
+}
+
+.tab-4 {
+  animation-delay: 4s;
+}
+.tab-4.expand::after {
+  content: "";
+  background-color: #e84a5f;
+}
+
+.tab-5 {
+  animation-delay: 2s;
+}
+.tab-5.expand::after {
+  content: "";
+  background-color: #d92027;
+}
+
+.tab-6 {
+  animation-delay: 3s;
+}
+.tab-6.expand::after {
+  content: "";
+  background-color: #6a097d;
+}
+
+.tab-7 {
+  animation-delay: 5s;
+}
+
+.tab-8 {
+  animation-delay: 1s;
+}
+
+.tab-9 {
+  animation-delay: 6s;
+}
+
+.tab-10 {
+  animation-delay: 2s;
+}
+
+/* ----- */
+
+.tab-1.expand::after, .tab-2.expand::after, .tab-3.expand::after, .tab-4.expand::after, .tab-5.expand::after, .tab-6.expand::after {
+  content: "";
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: expand ease 1s;
+  pointer-events: none;
+}
+
+/* ----- */
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 750px){
+  .tabs > div {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .tabs > div {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1300px){
+  .tabs > div {
+    width: 120px;
+    height: 120px;
+    margin: 10px 50px;
+  }
+}
